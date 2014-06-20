@@ -5,19 +5,17 @@ Date: 3/15/2014
 ​This file contains the css to stile the closingtime app
 */
 
-#searchBox {
-    position:relative;
-}
-
 #box {
     background-color: #FFFFFF; 
     border: solid 1px rgb(0,113,188); 
     outline: none; 
     padding: 2px 2px; 
-    position: absolute;
     top:-55px;
-    right:468px;
+    right:100px;
+    width: 420px;
 }
+
+#searchBox {}
 
 .form { 
     background-color: #D7EFFF; 
@@ -41,12 +39,12 @@ Date: 3/15/2014
 	display:inline-block;
 	color:#0074bc;
 	font-family:Arial;
-	font-size:34px;
+        font-size:17px;    
 	font-weight:bold;
 	font-style:normal;
-	height:65px;
-	line-height:65px;
-	width:131px;
+        height:23px;
+        line-height:23px;
+        width:50px;
 	text-decoration:none;
 	text-align:center;
 }#searchButton:hover {
