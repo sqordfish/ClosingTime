@@ -1,0 +1,46 @@
+<!--
+index.html
+Author: Jacob Rust
+Date: 3/12/2014
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+  </head>
+  
+  <body>  
+    <div id="searchArea" align="center">
+        <img id="logo" src="images/logo.png" alt="Main image" align="center">
+        <form id="searchBox" action="" method="GET">
+            <input id="box" type="text" style="width: 420px;" size="40" placeholder="Enter the name of any place and find out when it closes">
+            <br>    
+            <input id="searchButton" type="button" value="Go" onclick="start(); 
+                document.getElementById('searchArea').style.setProperty('visibility', 'hidden')">
+            <br>
+            <img src="images/powered-by-google-on-white.png" alt="required image">
+        </form>
+        
+    </div>
+   
+    <div id="searchResults"></div>
+    <div id="places-services" ></div>
+    
+      <!-- Closing Time Song -->
+    <embed height="0" width="0" src="01 Closing Time.m4a"> 
+    
+    <script src="closingtime.js"></script>
+  </body>
+</html>
