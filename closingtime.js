@@ -12,12 +12,15 @@ function getLocation() {
     if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(search, error);
     } else {
-	alert("geolocation did not work");
+	alert("Geolocation failed. Can't find you!");
     }
 
-    function error() {
-	alert("Error");
-        coords = new Coordinates(40, 74);
+    function error(position) {
+	alert("Geolocation failed.");
+        document.getElementById("searchResults").innerHTML += "Geolocation failed. Showing a result from New York. <br>"
+        position.coords.latitude = 40.7127;
+        position.coords.longitude = 74.0059;
+        search(position);
     }
 }
 
