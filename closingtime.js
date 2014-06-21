@@ -15,12 +15,9 @@ function getLocation() {
 	alert("Geolocation failed. Can't find you!");
     }
 
-    function error(position) {
-	alert("Geolocation failed.");
-        document.getElementById("searchResults").innerHTML += "Geolocation failed. Showing a result from New York. <br>"
-        position.coords.latitude = 40.7127;
-        position.coords.longitude = 74.0059;
-        search(position);
+    function error() {
+        document.getElementById("searchResults").innerHTML = "Geolocation failed. \n\
+                     Unable to find the closing time of a place close to you without your location.";
     }
 }
 
