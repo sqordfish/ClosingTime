@@ -2,7 +2,7 @@
 style.css
 Author: Jacob Rust
 Date: 3/15/2014
-​This file contains the css to stile the closingtime app
+​This file contains the css to style the closingtime app
 */
 
 #box {
@@ -12,7 +12,13 @@ Date: 3/15/2014
     padding: 2px 2px; 
     top:-55px;
     right:100px;
-    width: 420px;
+    width: 340px;
+}
+
+html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px
 }
 
 #searchBox {}
@@ -33,7 +39,7 @@ Date: 3/15/2014
     background-color: #FFFFFF; 
 }
 
-#searchButton {
+.Button {
 	background-color:#ffffff;
 	border:1px solid #0074bc;
 	display:inline-block;
@@ -47,17 +53,25 @@ Date: 3/15/2014
         width:50px;
 	text-decoration:none;
 	text-align:center;
-}#searchButton:hover {
+}.Button:hover {
 	background-color:#f0f9ff;
-}#searchButton:active {
+}.Button:active {
 	position:relative;
 	top:1px;
 }
 
+#backButton {
+    visibility: hidden;
+    position: relative;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: -150px;
+}
+
 #searchResults{
-    position: absolute;
-    top: 50px;
-    left: 25px;
+    margin-top: 13px;
+    text-align: center;
+    top: -150px;
+    left: 0px;
 }​
-
-

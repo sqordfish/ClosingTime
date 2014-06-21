@@ -6,17 +6,6 @@ This file contains javascript code to retrieve info about a place using
 google places api
 */
 
-//function Coordinates(latitude, longitude) {
-//    var latitude;
-//    var longitude;
-//    function setLat(lat) {
-//        this.latitude = lat;
-//    } 
-//    function setLong(long) {
-//        this.longitude = long;
-//    }
-//}
-
 //Gets location of the user and 
 function getLocation() {
     
@@ -25,14 +14,8 @@ function getLocation() {
     } else {
 	alert("geolocation did not work");
     }
-    
-    function success(position) {
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;;
-        search(latitude, longitude);
-    }
-    
-    function error(position) {
+
+    function error() {
 	alert("Error");
         coords = new Coordinates(40, 74);
     }
@@ -83,8 +66,9 @@ function search(position) {
             if (firstEntry) {
                 firstEntry = false;        
                 var firstDiv = document.createElement('div');
-                firstDiv.style.fontSize = "50px";
+                firstDiv.style.fontSize = "30px";
                 firstDiv.style.color = "#0074bc";
+                
                 var day = (new Date()).getDay();
                 
                 //TODO get a photo of the place
@@ -111,6 +95,7 @@ function search(position) {
                 div.appendChild(firstDiv);
                 var notesDiv = document.createElement('div');
                 notesDiv.style.color = "#C1272D";
+                notesDiv.style.fontSize = "15px";
                 
                 notesDiv.innerHTML += "These results come from the " + name +
                         " at ";
@@ -120,8 +105,6 @@ function search(position) {
                 for (var i = 0; i < addressInfo.length; i++) {
                     notesDiv.innerHTML += addressInfo[i].short_name + " ";
                 }
-                               
-                notesDiv.innerHTML += "<br>Refresh the page to look up something else.";
                 
                 div.appendChild(notesDiv);
             }
@@ -149,11 +132,11 @@ function parseTime(time) {
     }
     
     time = new String(time);
+    
     //add the colon to the time
     //length - 2 accounts for 3 and 4 digit times
     return time.substr(0, time.length-2) + ":" 
             + time.substr(time.length-2) + period;
-    
 }
 
 //Changes day from google representation to normal
@@ -180,5 +163,3 @@ function parseDay(day) {
 function start() {
     getLocation();
 }
-
-

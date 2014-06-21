@@ -10,13 +10,6 @@ Date: 3/12/2014
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
   </head>
@@ -27,15 +20,14 @@ Date: 3/12/2014
         <form id="searchBox" action="" method="GET">
             <input id="box" type="text" size="40" placeholder="Enter the name of any place and find out when it closes">    
             <br>
-            <input id="searchButton" type="button" value="Go" onclick="start(); 
-                document.getElementById('searchArea').style.setProperty('visibility', 'hidden')">
+            <input id="searchButton" style="#searchButton" type="button" class="Button" value="Go" onclick="start();
+                   document.getElementById('searchResults').innerHTML = ''">
             <br>
-            <img src="images/powered-by-google-on-white.png" alt="required image">
         </form>
-        
+
+        <img src="images/powered-by-google-on-white.png" alt="required image">
+        <div id="searchResults"></div>
     </div>
-   
-    <div id="searchResults"></div>
     <div id="places-services" ></div>
     
       <!-- Closing Time Song -->
